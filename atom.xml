@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>wanzhaoyang</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2017-08-23T09:49:20.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>wanzhaoyang</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2017/08/23/hello-world/"/>
+    <id>http://yoursite.com/2017/08/23/hello-world/</id>
+    <published>2017-08-23T09:44:46.000Z</published>
+    <updated>2017-08-23T09:49:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>IM保持多活方案</title>
+    <link href="http://yoursite.com/2017/07/09/16%E3%80%81IM%E4%BF%9D%E6%8C%81%E5%A4%9A%E6%B4%BB%E6%96%B9%E6%A1%88_todo/"/>
+    <id>http://yoursite.com/2017/07/09/16、IM保持多活方案_todo/</id>
+    <published>2017-07-09T07:23:11.000Z</published>
+    <updated>2017-08-23T08:53:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
+<h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
+<h3 id="part-2"><a href="#part-2" class="headerlink" title="part 2"></a>part 2</h3><p>总</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;what-is-this-article-for&quot;&gt;&lt;a href=&quot;#what-is-this-article-for&quot; class=&quot;headerlink&quot; title=&quot;what is this article for&quot;&gt;&lt;/a&gt;what is this a
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>UIWebView URL拦截</title>
+    <link href="http://yoursite.com/2017/06/16/15%E3%80%81UIWebView%20URL%E6%8B%A6%E6%88%AA_todo/"/>
+    <id>http://yoursite.com/2017/06/16/15、UIWebView URL拦截_todo/</id>
+    <published>2017-06-16T14:10:10.000Z</published>
+    <updated>2017-08-23T08:52:49.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
+<h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
+<h3 id="part-2"><a href="#part-2" class="headerlink" title="part 2"></a>part 2</h3><p>总</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;what-is-this-article-for&quot;&gt;&lt;a href=&quot;#what-is-this-article-for&quot; class=&quot;headerlink&quot; title=&quot;what is this article for&quot;&gt;&lt;/a&gt;what is this a
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>router相关实现</title>
+    <link href="http://yoursite.com/2017/05/20/14%E3%80%81router%E7%9B%B8%E5%85%B3%E5%AE%9E%E7%8E%B0_todo/"/>
+    <id>http://yoursite.com/2017/05/20/14、router相关实现_todo/</id>
+    <published>2017-05-20T08:25:11.000Z</published>
+    <updated>2017-08-23T08:51:43.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
+<h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
+<h3 id="part-2"><a href="#part-2" class="headerlink" title="part 2"></a>part 2</h3><p>总</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;what-is-this-article-for&quot;&gt;&lt;a href=&quot;#what-is-this-article-for&quot; class=&quot;headerlink&quot; title=&quot;what is this article for&quot;&gt;&lt;/a&gt;what is this a
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Core ML近接触</title>
+    <link href="http://yoursite.com/2017/04/30/13%E3%80%81Core%20ML%E8%BF%91%E6%8E%A5%E8%A7%A6_todo/"/>
+    <id>http://yoursite.com/2017/04/30/13、Core ML近接触_todo/</id>
+    <published>2017-04-30T04:20:14.000Z</published>
+    <updated>2017-08-23T08:48:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
+<h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
+<h3 id="part-2"><a href="#part-2" class="headerlink" title="part 2"></a>part 2</h3><p>总</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;what-is-this-article-for&quot;&gt;&lt;a href=&quot;#what-is-this-article-for&quot; class=&quot;headerlink&quot; title=&quot;what is this article for&quot;&gt;&lt;/a&gt;what is this a
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>iOS如何写好单元测试</title>
+    <link href="http://yoursite.com/2017/04/14/12%E3%80%81iOS%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95_todo/"/>
+    <id>http://yoursite.com/2017/04/14/12、iOS如何写好单元测试_todo/</id>
+    <published>2017-04-14T15:23:14.000Z</published>
+    <updated>2017-08-23T08:47:28.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
+<h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
+<h3 id="part-2"><a href="#part-2" class="headerlink" title="part 2"></a>part 2</h3><p>总</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;what-is-this-article-for&quot;&gt;&lt;a href=&quot;#what-is-this-article-for&quot; class=&quot;headerlink&quot; title=&quot;what is this article for&quot;&gt;&lt;/a&gt;what is this a
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>react相关学习</title>
+    <link href="http://yoursite.com/2017/03/25/11%E3%80%81react%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0_todo/"/>
+    <id>http://yoursite.com/2017/03/25/11、react相关学习_todo/</id>
+    <published>2017-03-25T03:27:20.000Z</published>
+    <updated>2017-08-23T08:46:46.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
+<h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
+<h3 id="part-2"><a href="#part-2" class="headerlink" title="part 2"></a>part 2</h3><p>总</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;what-is-this-article-for&quot;&gt;&lt;a href=&quot;#what-is-this-article-for&quot; class=&quot;headerlink&quot; title=&quot;what is this article for&quot;&gt;&lt;/a&gt;what is this a
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>音视频相关学习指南</title>
+    <link href="http://yoursite.com/2017/03/04/10%E3%80%81%E9%9F%B3%E8%A7%86%E9%A2%91%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97_todo/"/>
+    <id>http://yoursite.com/2017/03/04/10、音视频相关学习指南_todo/</id>
+    <published>2017-03-04T07:30:11.000Z</published>
+    <updated>2017-08-23T08:46:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
+<h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
+<h3 id="part-2"><a href="#part-2" class="headerlink" title="part 2"></a>part 2</h3><p>总</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;what-is-this-article-for&quot;&gt;&lt;a href=&quot;#what-is-this-article-for&quot; class=&quot;headerlink&quot; title=&quot;what is this article for&quot;&gt;&lt;/a&gt;what is this a
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>iOS集成React Native总结</title>
+    <link href="http://yoursite.com/2017/02/18/09%E3%80%81iOS%E9%9B%86%E6%88%90React%20Native%E6%80%BB%E7%BB%93_todo/"/>
+    <id>http://yoursite.com/2017/02/18/09、iOS集成React Native总结_todo/</id>
+    <published>2017-02-18T05:45:11.000Z</published>
+    <updated>2017-08-23T08:45:19.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>##一、安装及依赖项<br>1、安装Homebrew，用于安装Node.js<br><code>/usr/bin/ruby -e &quot;$(curl -fsSL</code> <a href="https://raw.githubusercontent.com/Homebrew/install/master/install" target="_blank" rel="external">https://raw.githubusercontent.com/Homebrew/install/master/install</a>)”<br>2、安装Node.js</p>
+<pre><code>brew install node
+</code></pre><p>3、创建RN工程</p>
+<pre><code>react-native init AwesomeProject
+cd AwesomeProject
+react-native run-ios
+</code></pre><p>##二、能力<br>1、无需编译，只需要更新一下云端js代码，reload一下即可<br>2、Native组件标签化，布局代码采用JSX<br>3、Debug方便，修改了js以后，通过内建的node.js watcher编译成bundle，在模拟器里面按cmd+r就可以看到效果，大大提高开发效率<br>4、RN模块支持与原生模块互相调用，扩展性好<br>5、支持嵌入到现有APP中，混合开发 <a href="http://reactnative.cn/docs/0.45/integration-with-existing-apps.html#content" target="_blank" rel="external">http://reactnative.cn/docs/0.45/integration-with-existing-apps.html#content</a><br>6、发布时，所有JS打包到本地，默认支持离线<br>7、支持使用drawable／assets图片，网络图片需要指明明确的显示大小</p>
+<p>##三、开发应具备知识<br>ES6<br>react<br>JSX<br>components【App的最终界面，也是各种各样的组件的组合】<br>state与props：props在父组件中指定，一经指定，在被指定的组件的生命周期中则不再改变。对于需要改变的数据，需要使用state<br>Flexbox布局</p>
+<p>##四、RN动态更新（目前国内外有第三方服务，自己也能做）<br>js文件打包到jsBundle内<br>app检测是否有新版本的jsbundle，如果有则进行下载，保存到document<br>用户每次打开app都可以读取最新的bundle</p>
+<p>##五、现在存在哪些问题<br>1、依赖于原声组件暴露出来的组件和方法，例如scrollView，在Native层是有大量事件的，scrollViewWillBeginDragging， scrollViewWillEndDragging，scrollViewDidEndDragging等等，这些事件在现有的版本都没有暴露，基本上做不了组件联动效果。<br>2、很多组件都是iOS only。DatePickerIOS、NavigatorIOS、PickerIOS、ProgressViewIOS、SegmentedControlIOS、TabBarIOS、TabBarIOS.Item、AlertIOS、ImagePickerIOS。很多情况下需要在不同平台写两套代码，不过最基本的核心控件都包括了<br>3、RN 自带的 ListView 是没有使用 Recycling 的，这样就使得 RN 无法使用大数据的长列表。如果你的 App 中使用无限加载或者多个较多数据的列表。那么你的 App 就会非常吃内存，卡死、甚至使得 App 闪退。第三方解决方案不完美解决该问题（FlatList组件：优化内存保持滑动流畅，列表在屏幕外异步绘制，因此存在问题是当滑动速度超过渲染速度时，先看到空白内容，设置initialNumToRender，初始绘制的元素数量）</p>
+<p>##六、后续前景<br>1、Facebook造的轮子，而且现在在多个app（Instagram、Facebook）都在应用<br>2、受限于Apple store审核政策。目前有热更新方案，苹果目前的政策明确允许基于javascriptCore的热更新，但后续政策也可能改变。</p>
+<p>##七、相关学习资料<br><a href="http://reactnative.cn/docs/0.45/getting-started.html#content" target="_blank" rel="external">1、中文官方教程，简单入门的教程，门槛比较低，上面的demo也比较简单</a><br><a href="https://github.com/crazycodeboy/RNStudyNotes" target="_blank" rel="external">2、React Native 研究与实践，结合实际开发经验，有相关教学视频，有demo，GitHub上star 1300+。包含构建官方example教程</a><br><a href="https://github.com/jondot/awesome-react-native" target="_blank" rel="external">3、React Native英文学习资料整理，内容较多较全，GitHub上star 13000+，学习曲线稍微有点陡</a><br><a href="http://bbs.reactnative.cn/topic/130/%E6%96%B0%E6%89%8B%E6%8F%90%E9%97%AE%E5%89%8D%E5%85%88%E6%9D%A5%E8%BF%99%E9%87%8C%E7%9C%8B%E7%9C%8B-react-native%E7%9A%84%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98" target="_blank" rel="external">4、RN常见问题汇总</a><br><a href="https://github.com/reactnativecn/react-native-guide" target="_blank" rel="external">5、非常全，涉及到教程、非常多开源app等一系列内容</a><br><a href="http://www.ruanyifeng.com/blog/archives.html" target="_blank" rel="external">6、阮一峰的全栈教程</a><br><a href="https://segmentfault.com/a/1190000002678782" target="_blank" rel="external">7、RN分享</a><br><a href="http://www.infoq.com/cn/articles/jd-618-ReactNative-jingdong-practise?utm_campaign=rightbar_v2&amp;utm_source=infoq&amp;utm_medium=articles_link&amp;utm_content=link_text" target="_blank" rel="external">8、京东实践</a><br><a href="https://mp.weixin.qq.com/s?__biz=MzI1MTA1MzM2Nw==&amp;mid=401483604&amp;idx=1&amp;sn=399cdf7e13fe6125108de1bfd045f2cf&amp;scene=1&amp;srcid=0228wE75TF9Zqzny7mt7ZS3J&amp;key=710a5d99946419d9b9d0a316ddb898594e9089b1b29a8759cca5ff2407c204f72876180e08fd6c60d3816da7e4c39053&amp;ascene=0&amp;uin=Mjc3OTU3Nzk1&amp;devicetype=iMac%20MacBookPro10,1%20OSX%20OSX%2010.10.5%20build%2814F27%29&amp;version=11020201&amp;pass_ticket=m2YLRqjCZ5S4CHXKqIpGbkf59t1oYvRDZ6krGXEuDfWlQcoVj1p2g8gzHOEYrM9U" target="_blank" rel="external">9、ReactNative For Android 项目实战总结</a><br><a href="http://www.cnblogs.com/maomishen/p/5303976.html" target="_blank" rel="external">10、RN初步搭建及Bundle发布问题</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;##一、安装及依赖项&lt;br&gt;1、安装Homebrew，用于安装Node.js&lt;br&gt;&lt;code&gt;/usr/bin/ruby -e &amp;quot;$(curl -fsSL&lt;/code&gt; &lt;a href=&quot;https://raw.githubusercontent.com/Hom
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>cocoapods使用相关技巧</title>
+    <link href="http://yoursite.com/2017/02/08/08%E3%80%81cocoapods%E4%BD%BF%E7%94%A8%E7%9B%B8%E5%85%B3%E6%8A%80%E5%B7%A7_todo/"/>
+    <id>http://yoursite.com/2017/02/08/08、cocoapods使用相关技巧_todo/</id>
+    <published>2017-02-08T15:10:00.000Z</published>
+    <updated>2017-08-23T08:43:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
+<h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
+<h3 id="part-2"><a href="#part-2" class="headerlink" title="part 2"></a>part 2</h3><p>总</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;what-is-this-article-for&quot;&gt;&lt;a href=&quot;#what-is-this-article-for&quot; class=&quot;headerlink&quot; title=&quot;what is this article for&quot;&gt;&lt;/a&gt;what is this a
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>一种基于YYCache的缓存设计机制</title>
+    <link href="http://yoursite.com/2017/01/20/07%E3%80%81%E4%B8%80%E7%A7%8D%E5%9F%BA%E4%BA%8EYYCache%E7%9A%84%E7%BC%93%E5%AD%98%E8%AE%BE%E8%AE%A1%E6%9C%BA%E5%88%B6_todo/"/>
+    <id>http://yoursite.com/2017/01/20/07、一种基于YYCache的缓存设计机制_todo/</id>
+    <published>2017-01-20T15:21:20.000Z</published>
+    <updated>2017-08-23T08:26:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
+<h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
+<h3 id="part-2"><a href="#part-2" class="headerlink" title="part 2"></a>part 2</h3><p>总</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;what-is-this-article-for&quot;&gt;&lt;a href=&quot;#what-is-this-article-for&quot; class=&quot;headerlink&quot; title=&quot;what is this article for&quot;&gt;&lt;/a&gt;what is this a
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>文本框输入的终极解决方案</title>
+    <link href="http://yoursite.com/2017/01/07/06%E3%80%81%E6%96%87%E6%9C%AC%E6%A1%86%E8%BE%93%E5%85%A5%E7%9A%84%E7%BB%88%E6%9E%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88_todo/"/>
+    <id>http://yoursite.com/2017/01/07/06、文本框输入的终极解决方案_todo/</id>
+    <published>2017-01-07T13:11:42.000Z</published>
+    <updated>2017-08-23T08:26:43.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
+<h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
+<h3 id="part-2"><a href="#part-2" class="headerlink" title="part 2"></a>part 2</h3><p>总</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;what-is-this-article-for&quot;&gt;&lt;a href=&quot;#what-is-this-article-for&quot; class=&quot;headerlink&quot; title=&quot;what is this article for&quot;&gt;&lt;/a&gt;what is this a
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>多线程编程</title>
+    <link href="http://yoursite.com/2016/12/25/05%E3%80%81%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B_todo/"/>
+    <id>http://yoursite.com/2016/12/25/05、多线程编程_todo/</id>
+    <published>2016-12-25T08:20:33.000Z</published>
+    <updated>2017-08-23T08:58:25.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
+<h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
+<h3 id="part-2"><a href="#part-2" class="headerlink" title="part 2"></a>part 2</h3><p>总</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;what-is-this-article-for&quot;&gt;&lt;a href=&quot;#what-is-this-article-for&quot; class=&quot;headerlink&quot; title=&quot;what is this article for&quot;&gt;&lt;/a&gt;what is this a
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>xcconfig相关使用技巧、环境变量定义</title>
+    <link href="http://yoursite.com/2016/12/17/04%E3%80%81xcconfig%E7%9B%B8%E5%85%B3%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E3%80%81%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%AE%9A%E4%B9%89_todo/"/>
+    <id>http://yoursite.com/2016/12/17/04、xcconfig相关使用技巧、环境变量定义_todo/</id>
+    <published>2016-12-17T15:20:11.000Z</published>
+    <updated>2017-08-23T08:58:09.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
+<h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
+<h3 id="part-2"><a href="#part-2" class="headerlink" title="part 2"></a>part 2</h3><p>总</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;what-is-this-article-for&quot;&gt;&lt;a href=&quot;#what-is-this-article-for&quot; class=&quot;headerlink&quot; title=&quot;what is this article for&quot;&gt;&lt;/a&gt;what is this a
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>jsbridge</title>
+    <link href="http://yoursite.com/2016/12/02/03%E3%80%81jsbridge_todo/"/>
+    <id>http://yoursite.com/2016/12/02/03、jsbridge_todo/</id>
+    <published>2016-12-02T15:04:10.000Z</published>
+    <updated>2017-08-23T08:57:55.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
+<h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
+<h3 id="part-2"><a href="#part-2" class="headerlink" title="part 2"></a>part 2</h3><p>总</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;what-is-this-article-for&quot;&gt;&lt;a href=&quot;#what-is-this-article-for&quot; class=&quot;headerlink&quot; title=&quot;what is this article for&quot;&gt;&lt;/a&gt;what is this a
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>文本框输入的终极解决方案</title>
+    <link href="http://yoursite.com/2016/11/25/02%E3%80%81%E6%96%87%E6%9C%AC%E6%A1%86%E8%BE%93%E5%85%A5%E7%9A%84%E7%BB%88%E6%9E%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88_todo/"/>
+    <id>http://yoursite.com/2016/11/25/02、文本框输入的终极解决方案_todo/</id>
+    <published>2016-11-25T07:43:11.000Z</published>
+    <updated>2017-08-23T08:57:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
+<h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
+<h3 id="part-2"><a href="#part-2" class="headerlink" title="part 2"></a>part 2</h3><p>总</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;what-is-this-article-for&quot;&gt;&lt;a href=&quot;#what-is-this-article-for&quot; class=&quot;headerlink&quot; title=&quot;what is this article for&quot;&gt;&lt;/a&gt;what is this a
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>iOS app上架流程详细指南</title>
+    <link href="http://yoursite.com/2016/11/12/01%E3%80%81iOS%20app%E4%B8%8A%E6%9E%B6%E6%B5%81%E7%A8%8B%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97_todo/"/>
+    <id>http://yoursite.com/2016/11/12/01、iOS app上架流程详细指南_todo/</id>
+    <published>2016-11-12T14:13:00.000Z</published>
+    <updated>2017-08-23T08:57:27.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
+<h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
+<h3 id="part-2"><a href="#part-2" class="headerlink" title="part 2"></a>part 2</h3><p>总</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;what-is-this-article-for&quot;&gt;&lt;a href=&quot;#what-is-this-article-for&quot; class=&quot;headerlink&quot; title=&quot;what is this article for&quot;&gt;&lt;/a&gt;what is this a
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>关于push</title>
+    <link href="http://yoursite.com/2016/11/06/01%E3%80%81%E5%85%B3%E4%BA%8Epush_todo/"/>
+    <id>http://yoursite.com/2016/11/06/01、关于push_todo/</id>
+    <published>2016-11-06T06:25:33.000Z</published>
+    <updated>2017-08-23T08:57:11.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
+<h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
+<h3 id="part-2"><a href="#part-2" class="headerlink" title="part 2"></a>part 2</h3><p>总</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;what-is-this-article-for&quot;&gt;&lt;a href=&quot;#what-is-this-article-for&quot; class=&quot;headerlink&quot; title=&quot;what is this article for&quot;&gt;&lt;/a&gt;what is this a
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>

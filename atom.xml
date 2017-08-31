@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-23T08:53:37.000Z</updated>
+  <updated>2017-08-31T13:43:20.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,10 +17,10 @@
   
   <entry>
     <title>IM保持多活方案</title>
-    <link href="http://yoursite.com/2017/07/09/17%E3%80%81IM%E4%BF%9D%E6%8C%81%E5%A4%9A%E6%B4%BB%E6%96%B9%E6%A1%88_todo/"/>
-    <id>http://yoursite.com/2017/07/09/17、IM保持多活方案_todo/</id>
+    <link href="http://yoursite.com/2017/07/09/16%E3%80%81IM%E4%BF%9D%E6%8C%81%E5%A4%9A%E6%B4%BB%E6%96%B9%E6%A1%88_todo/"/>
+    <id>http://yoursite.com/2017/07/09/16、IM保持多活方案_todo/</id>
     <published>2017-07-09T07:23:11.000Z</published>
-    <updated>2017-08-23T08:53:37.000Z</updated>
+    <updated>2017-08-31T13:43:20.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
 <h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
@@ -33,15 +33,17 @@
     
     </summary>
     
+    
+      <category term="IM" scheme="http://yoursite.com/tags/IM/"/>
     
   </entry>
   
   <entry>
     <title>UIWebView URL拦截</title>
-    <link href="http://yoursite.com/2017/06/16/16%E3%80%81UIWebView%20URL%E6%8B%A6%E6%88%AA_todo/"/>
-    <id>http://yoursite.com/2017/06/16/16、UIWebView URL拦截_todo/</id>
+    <link href="http://yoursite.com/2017/06/16/15%E3%80%81UIWebView%20URL%E6%8B%A6%E6%88%AA_todo/"/>
+    <id>http://yoursite.com/2017/06/16/15、UIWebView URL拦截_todo/</id>
     <published>2017-06-16T14:10:10.000Z</published>
-    <updated>2017-08-23T08:52:49.000Z</updated>
+    <updated>2017-08-31T13:43:10.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
 <h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
@@ -54,15 +56,19 @@
     
     </summary>
     
+    
+      <category term="H5" scheme="http://yoursite.com/tags/H5/"/>
+    
+      <category term="缓存" scheme="http://yoursite.com/tags/%E7%BC%93%E5%AD%98/"/>
     
   </entry>
   
   <entry>
     <title>router相关实现</title>
-    <link href="http://yoursite.com/2017/05/20/15%E3%80%81router%E7%9B%B8%E5%85%B3%E5%AE%9E%E7%8E%B0_todo/"/>
-    <id>http://yoursite.com/2017/05/20/15、router相关实现_todo/</id>
+    <link href="http://yoursite.com/2017/05/20/14%E3%80%81router%E7%9B%B8%E5%85%B3%E5%AE%9E%E7%8E%B0_todo/"/>
+    <id>http://yoursite.com/2017/05/20/14、router相关实现_todo/</id>
     <published>2017-05-20T08:25:11.000Z</published>
-    <updated>2017-08-23T08:51:43.000Z</updated>
+    <updated>2017-08-31T13:42:50.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
 <h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
@@ -75,15 +81,19 @@
     
     </summary>
     
+    
+      <category term="设计" scheme="http://yoursite.com/tags/%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="模块化" scheme="http://yoursite.com/tags/%E6%A8%A1%E5%9D%97%E5%8C%96/"/>
     
   </entry>
   
   <entry>
     <title>Core ML近接触</title>
-    <link href="http://yoursite.com/2017/04/30/14%E3%80%81Core%20ML%E8%BF%91%E6%8E%A5%E8%A7%A6_todo/"/>
-    <id>http://yoursite.com/2017/04/30/14、Core ML近接触_todo/</id>
+    <link href="http://yoursite.com/2017/04/30/13%E3%80%81Core%20ML%E8%BF%91%E6%8E%A5%E8%A7%A6_todo/"/>
+    <id>http://yoursite.com/2017/04/30/13、Core ML近接触_todo/</id>
     <published>2017-04-30T04:20:14.000Z</published>
-    <updated>2017-08-23T08:48:37.000Z</updated>
+    <updated>2017-08-31T13:42:33.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
 <h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
@@ -96,15 +106,19 @@
     
     </summary>
     
+    
+      <category term="学习" scheme="http://yoursite.com/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="前沿技术" scheme="http://yoursite.com/tags/%E5%89%8D%E6%B2%BF%E6%8A%80%E6%9C%AF/"/>
     
   </entry>
   
   <entry>
     <title>iOS如何写好单元测试</title>
-    <link href="http://yoursite.com/2017/04/14/13%E3%80%81iOS%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95_todo/"/>
-    <id>http://yoursite.com/2017/04/14/13、iOS如何写好单元测试_todo/</id>
+    <link href="http://yoursite.com/2017/04/14/12%E3%80%81iOS%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95_todo/"/>
+    <id>http://yoursite.com/2017/04/14/12、iOS如何写好单元测试_todo/</id>
     <published>2017-04-14T15:23:14.000Z</published>
-    <updated>2017-08-23T08:47:28.000Z</updated>
+    <updated>2017-08-31T13:42:17.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
 <h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
@@ -117,15 +131,17 @@
     
     </summary>
     
+    
+      <category term="单元测试" scheme="http://yoursite.com/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>react相关学习</title>
-    <link href="http://yoursite.com/2017/03/25/12%E3%80%81react%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0_todo/"/>
-    <id>http://yoursite.com/2017/03/25/12、react相关学习_todo/</id>
+    <link href="http://yoursite.com/2017/03/25/11%E3%80%81react%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0_todo/"/>
+    <id>http://yoursite.com/2017/03/25/11、react相关学习_todo/</id>
     <published>2017-03-25T03:27:20.000Z</published>
-    <updated>2017-08-23T08:46:46.000Z</updated>
+    <updated>2017-08-31T13:41:58.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
 <h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
@@ -138,15 +154,17 @@
     
     </summary>
     
+    
+      <category term="React" scheme="http://yoursite.com/tags/React/"/>
     
   </entry>
   
   <entry>
     <title>音视频相关学习指南</title>
-    <link href="http://yoursite.com/2017/03/04/11%E3%80%81%E9%9F%B3%E8%A7%86%E9%A2%91%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97_todo/"/>
-    <id>http://yoursite.com/2017/03/04/11、音视频相关学习指南_todo/</id>
+    <link href="http://yoursite.com/2017/03/04/10%E3%80%81%E9%9F%B3%E8%A7%86%E9%A2%91%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%E6%8C%87%E5%8D%97_todo/"/>
+    <id>http://yoursite.com/2017/03/04/10、音视频相关学习指南_todo/</id>
     <published>2017-03-04T07:30:11.000Z</published>
-    <updated>2017-08-23T08:46:02.000Z</updated>
+    <updated>2017-08-31T13:41:45.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
 <h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
@@ -160,14 +178,16 @@
     </summary>
     
     
+      <category term="音视频" scheme="http://yoursite.com/tags/%E9%9F%B3%E8%A7%86%E9%A2%91/"/>
+    
   </entry>
   
   <entry>
     <title>iOS集成React Native总结</title>
-    <link href="http://yoursite.com/2017/02/18/10%E3%80%81iOS%E9%9B%86%E6%88%90React%20Native%E6%80%BB%E7%BB%93_todo/"/>
-    <id>http://yoursite.com/2017/02/18/10、iOS集成React Native总结_todo/</id>
+    <link href="http://yoursite.com/2017/02/18/09%E3%80%81iOS%E9%9B%86%E6%88%90React%20Native%E6%80%BB%E7%BB%93_todo/"/>
+    <id>http://yoursite.com/2017/02/18/09、iOS集成React Native总结_todo/</id>
     <published>2017-02-18T05:45:11.000Z</published>
-    <updated>2017-08-23T08:45:19.000Z</updated>
+    <updated>2017-08-31T13:42:08.000Z</updated>
     
     <content type="html"><![CDATA[<p>##一、安装及依赖项<br>1、安装Homebrew，用于安装Node.js<br><code>/usr/bin/ruby -e &quot;$(curl -fsSL</code> <a href="https://raw.githubusercontent.com/Homebrew/install/master/install" target="_blank" rel="external">https://raw.githubusercontent.com/Homebrew/install/master/install</a>)”<br>2、安装Node.js</p>
 <pre><code>brew install node
@@ -190,14 +210,16 @@ react-native run-ios
     </summary>
     
     
+      <category term="React" scheme="http://yoursite.com/tags/React/"/>
+    
   </entry>
   
   <entry>
     <title>cocoapods使用相关技巧</title>
-    <link href="http://yoursite.com/2017/02/08/09%E3%80%81cocoapods%E4%BD%BF%E7%94%A8%E7%9B%B8%E5%85%B3%E6%8A%80%E5%B7%A7_todo/"/>
-    <id>http://yoursite.com/2017/02/08/09、cocoapods使用相关技巧_todo/</id>
+    <link href="http://yoursite.com/2017/02/08/08%E3%80%81cocoapods%E4%BD%BF%E7%94%A8%E7%9B%B8%E5%85%B3%E6%8A%80%E5%B7%A7_todo/"/>
+    <id>http://yoursite.com/2017/02/08/08、cocoapods使用相关技巧_todo/</id>
     <published>2017-02-08T15:10:00.000Z</published>
-    <updated>2017-08-23T08:43:08.000Z</updated>
+    <updated>2017-08-31T13:41:25.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
 <h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
@@ -210,15 +232,17 @@ react-native run-ios
     
     </summary>
     
+    
+      <category term="基础" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>一种基于YYCache的缓存设计机制</title>
-    <link href="http://yoursite.com/2017/01/20/08%E3%80%81%E4%B8%80%E7%A7%8D%E5%9F%BA%E4%BA%8EYYCache%E7%9A%84%E7%BC%93%E5%AD%98%E8%AE%BE%E8%AE%A1%E6%9C%BA%E5%88%B6_todo/"/>
-    <id>http://yoursite.com/2017/01/20/08、一种基于YYCache的缓存设计机制_todo/</id>
+    <link href="http://yoursite.com/2017/01/20/07%E3%80%81%E4%B8%80%E7%A7%8D%E5%9F%BA%E4%BA%8EYYCache%E7%9A%84%E7%BC%93%E5%AD%98%E8%AE%BE%E8%AE%A1%E6%9C%BA%E5%88%B6_todo/"/>
+    <id>http://yoursite.com/2017/01/20/07、一种基于YYCache的缓存设计机制_todo/</id>
     <published>2017-01-20T15:21:20.000Z</published>
-    <updated>2017-08-23T08:26:32.000Z</updated>
+    <updated>2017-08-31T13:41:06.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
 <h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
@@ -232,26 +256,9 @@ react-native run-ios
     </summary>
     
     
-  </entry>
-  
-  <entry>
-    <title>文本框输入的终极解决方案</title>
-    <link href="http://yoursite.com/2017/01/07/07%E3%80%81%E6%96%87%E6%9C%AC%E6%A1%86%E8%BE%93%E5%85%A5%E7%9A%84%E7%BB%88%E6%9E%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88_todo/"/>
-    <id>http://yoursite.com/2017/01/07/07、文本框输入的终极解决方案_todo/</id>
-    <published>2017-01-07T13:11:42.000Z</published>
-    <updated>2017-08-23T08:26:43.000Z</updated>
+      <category term="设计" scheme="http://yoursite.com/tags/%E8%AE%BE%E8%AE%A1/"/>
     
-    <content type="html"><![CDATA[<h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
-<h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
-<h3 id="part-2"><a href="#part-2" class="headerlink" title="part 2"></a>part 2</h3><p>总</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;what-is-this-article-for&quot;&gt;&lt;a href=&quot;#what-is-this-article-for&quot; class=&quot;headerlink&quot; title=&quot;what is this article for&quot;&gt;&lt;/a&gt;what is this a
-    
-    </summary>
-    
+      <category term="缓存" scheme="http://yoursite.com/tags/%E7%BC%93%E5%AD%98/"/>
     
   </entry>
   
@@ -260,7 +267,7 @@ react-native run-ios
     <link href="http://yoursite.com/2016/12/25/06%E3%80%81%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%BC%96%E7%A8%8B_todo/"/>
     <id>http://yoursite.com/2016/12/25/06、多线程编程_todo/</id>
     <published>2016-12-25T08:20:33.000Z</published>
-    <updated>2017-08-23T08:58:25.000Z</updated>
+    <updated>2017-08-31T13:40:03.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
 <h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
@@ -273,6 +280,8 @@ react-native run-ios
     
     </summary>
     
+    
+      <category term="基础" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
@@ -281,7 +290,7 @@ react-native run-ios
     <link href="http://yoursite.com/2016/12/17/05%E3%80%81xcconfig%E7%9B%B8%E5%85%B3%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E3%80%81%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E5%AE%9A%E4%B9%89_todo/"/>
     <id>http://yoursite.com/2016/12/17/05、xcconfig相关使用技巧、环境变量定义_todo/</id>
     <published>2016-12-17T15:20:11.000Z</published>
-    <updated>2017-08-23T08:58:09.000Z</updated>
+    <updated>2017-08-31T13:39:54.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
 <h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
@@ -294,6 +303,8 @@ react-native run-ios
     
     </summary>
     
+    
+      <category term="环境" scheme="http://yoursite.com/tags/%E7%8E%AF%E5%A2%83/"/>
     
   </entry>
   
@@ -302,7 +313,7 @@ react-native run-ios
     <link href="http://yoursite.com/2016/12/02/04%E3%80%81jsbridge_todo/"/>
     <id>http://yoursite.com/2016/12/02/04、jsbridge_todo/</id>
     <published>2016-12-02T15:04:10.000Z</published>
-    <updated>2017-08-23T08:57:55.000Z</updated>
+    <updated>2017-08-31T13:39:31.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
 <h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
@@ -315,6 +326,8 @@ react-native run-ios
     
     </summary>
     
+    
+      <category term="H5" scheme="http://yoursite.com/tags/H5/"/>
     
   </entry>
   
@@ -323,7 +336,7 @@ react-native run-ios
     <link href="http://yoursite.com/2016/11/25/03%E3%80%81%E6%96%87%E6%9C%AC%E6%A1%86%E8%BE%93%E5%85%A5%E7%9A%84%E7%BB%88%E6%9E%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88_todo/"/>
     <id>http://yoursite.com/2016/11/25/03、文本框输入的终极解决方案_todo/</id>
     <published>2016-11-25T07:43:11.000Z</published>
-    <updated>2017-08-23T08:57:40.000Z</updated>
+    <updated>2017-08-31T13:39:17.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
 <h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
@@ -336,6 +349,8 @@ react-native run-ios
     
     </summary>
     
+    
+      <category term="UI" scheme="http://yoursite.com/tags/UI/"/>
     
   </entry>
   
@@ -344,7 +359,7 @@ react-native run-ios
     <link href="http://yoursite.com/2016/11/12/02%E3%80%81iOS%20app%E4%B8%8A%E6%9E%B6%E6%B5%81%E7%A8%8B%E8%AF%A6%E7%BB%86%E6%8C%87%E5%8D%97_todo/"/>
     <id>http://yoursite.com/2016/11/12/02、iOS app上架流程详细指南_todo/</id>
     <published>2016-11-12T14:13:00.000Z</published>
-    <updated>2017-08-23T08:57:27.000Z</updated>
+    <updated>2017-08-31T13:39:03.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
 <h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
@@ -357,6 +372,8 @@ react-native run-ios
     
     </summary>
     
+    
+      <category term="基础" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
@@ -365,7 +382,7 @@ react-native run-ios
     <link href="http://yoursite.com/2016/11/06/01%E3%80%81%E5%85%B3%E4%BA%8Epush_todo/"/>
     <id>http://yoursite.com/2016/11/06/01、关于push_todo/</id>
     <published>2016-11-06T06:25:33.000Z</published>
-    <updated>2017-08-23T08:57:11.000Z</updated>
+    <updated>2017-08-31T13:38:49.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
 <h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
@@ -378,6 +395,8 @@ react-native run-ios
     
     </summary>
     
+    
+      <category term="基础" scheme="http://yoursite.com/tags/%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   

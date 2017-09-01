@@ -1368,7 +1368,7 @@ react-native run-ios
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/20/07、一种基于YYCache的缓存设计机制_todo/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/20/07、一种基于YYCache的缓存设计机制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wanzhaoyang">
@@ -1387,7 +1387,7 @@ react-native run-ios
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/01/20/07、一种基于YYCache的缓存设计机制_todo/" itemprop="url">一种基于YYCache的缓存设计机制</a></h1>
+                <a class="post-title-link" href="/2017/01/20/07、一种基于YYCache的缓存设计机制/" itemprop="url">一种基于YYCache的缓存设计机制</a></h1>
         
 
         <div class="post-meta">
@@ -1439,9 +1439,52 @@ react-native run-ios
       
         
           
-            <h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
-<h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
-<h3 id="part-2"><a href="#part-2" class="headerlink" title="part 2"></a>part 2</h3><p>总</p>
+            <h3 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h3><p>当前IM功能使用腾讯云IM SDK，从腾讯云IM获取的用户信息不全，非好友用户的用户名和头像信息必须通过网络请求异步获取，每次均网络请求获取消耗大量网络资源。因此，聊天用户信息有本地缓存的需求。后续还可能有其他本地缓存的需求。</p>
+<h3 id="设计目标"><a href="#设计目标" class="headerlink" title="设计目标"></a>设计目标</h3><ul>
+<li>用户信息缓存独立于IM模块，IM模块只是用户信息的本地使用场景之一，还可用于其他业务场景；</li>
+<li>具备通用可扩展性，不仅支持用户信息缓存，还应支持后续其他信息的缓存；</li>
+<li>支持分账号缓存，实现不同账户缓存信息隔离；</li>
+<li>使用LruCache，在缓存值到达预设定值时将最近最少使用的对象移除；</li>
+<li>支持内存缓存和磁盘缓存。</li>
+</ul>
+<h3 id="方案设计"><a href="#方案设计" class="headerlink" title="方案设计"></a>方案设计</h3><p>经调研，目前iOS与android目前都有较好支持上述本地缓存的方案实现，只需要针对第三方方案做进一步的封装。以iOS端为例，YYCache能够较好的满足当前需求，具体特性如下（<a href="https://github.com/ibireme/YYCache）：" target="_blank" rel="external">https://github.com/ibireme/YYCache）：</a></p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LRU</td>
+<td>缓存支持 LRU (least-recently-used) 淘汰算法</td>
+</tr>
+<tr>
+<td>缓存控制</td>
+<td>支持多种缓存控制方法：总数量、总大小、存活时间、空闲空间</td>
+</tr>
+<tr>
+<td>兼容性</td>
+<td>API 基本和 NSCache 保持一致, 所有方法都是线程安全的</td>
+</tr>
+<tr>
+<td>内存缓存</td>
+<td>对象释放控制: 对象的释放(release) 可以配置为同步或异步进行，可以配置在主线程或后台线程进行;自动清空: 当收到内存警告或 App 进入后台时，缓存可以配置为自动清空。</td>
+</tr>
+<tr>
+<td>磁盘缓存</td>
+<td>可定制性: 磁盘缓存支持自定义的归档解档方法，以支持那些没有实现 NSCoding 协议的对象</td>
+</tr>
+</tbody>
+</table>
+<h3 id="iOS端方案实现"><a href="#iOS端方案实现" class="headerlink" title="iOS端方案实现"></a>iOS端方案实现</h3><p>首先是对YYCache的封装，提供SSCacheManager封装类，提供方法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">- (void)configCacheStrategyWithName:(NSString *)name maxCount:(NSUInteger)count maxSize:(NSUInteger)size;</div><div class="line"></div><div class="line">- (void)objectForKey:(NSString *)key withCacheName:(NSString *)name resultBlock:(void (^)(id object))block;</div><div class="line"></div><div class="line">- (void)setObject:(id)object forKey:(NSString *)key withCacheName:(NSString *)name;</div><div class="line"></div><div class="line">- (void)removeObjectForKey:(NSString *)key withCacheName:(NSString *)name;</div><div class="line"></div><div class="line">- (void)removeAllObjectsWithCacheName:(NSString *)name;</div></pre></td></tr></table></figure>
+<p>SSCacheManager实现不同用户的不同缓存信息分区，即<code>CacheWithName：</code>方法中将用户的OpenId，App的唯一标识BusinessId添加到缓存唯一标识中，具体实现如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">- (YYCache *)cacheWithName:(NSString *)name</div><div class="line">&#123;</div><div class="line">    SInt64 selfOpenId = [SSLoginUserManager defaultManager].user.openId;</div><div class="line">    NSInteger businessId = SS_BusinessId;</div><div class="line">    NSString *cacheKey = [NSString stringWithFormat:@&quot;%@_%@_%@&quot;, @(businessId), @(selfOpenId), name];</div><div class="line">    </div><div class="line">    return [YYCache cacheWithName:cacheKey];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上述实现了对YYCache的封装，按照软件架构设计分层思想，应当在此基础上封装业务层，用于具体处理对应的业务逻辑。下面将以缓存用户数据为实例，说明基于此的业务层的封装。对于用户信息管理类SSUserInfoManager，该业务层目标是快速方便增、删、改、查用户信息，提供接口如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// 获取用户信息，获取不到才走网络请求</div><div class="line">- (void)getUserInfoWithUserOpenId:(SInt64)openId resultBlock:(void(^)(SSUserInfoModel *userInfo))block;</div><div class="line"></div><div class="line">// 缓存用户信息</div><div class="line">- (void)cacheUserInfo:(SSUserInfoModel *)userProfile;</div><div class="line"></div><div class="line">// 直接根据openId去cache用户信息，更新本地信息，并通过block的方式回调，网络请求失败的时候，也会去本地查缓存信息</div><div class="line">- (void)cacheUserInfoWithOpenId:(SInt64)openId resultBlock:(void (^)(SSUserInfoModel *))block;</div><div class="line"></div><div class="line">// 删除用户信息</div><div class="line">- (void)removeUserWithOpenId:(SInt64)openId;</div></pre></td></tr></table></figure>
+<p><code>- getUserInfoWithUserOpenId: resultBlock:</code>方法和<code>- cacheUserInfoWithOpenId: resultBlock:</code>区别在于用户信息获取策略的优先级。第一个优先读取本地缓存，获取失败会走网络请求；第二个优先网络数据请求，请求失败走本地缓存。</p>
 
           
         

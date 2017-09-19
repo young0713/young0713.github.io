@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="设计,缓存," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="wanzhaoyang" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="需求分析当前IM功能使用腾讯云IM SDK，从腾讯云IM获取的用户信息不全，非好友用户的用户名和头像信息必须通过网络请求异步获取，每次均网络请求获取消耗大量网络资源。因此，聊天用户信息有本地缓存的需求。后续还可能有其他本地缓存的需求。 设计目标 用户信息缓存独立于IM模块，IM模块只是用户信息的本地使用场景之一，还可用于其他业务场景； 具备通用可扩展性，不仅支持用户信息缓存，还应支持后续其他信息的">
+<meta name="keywords" content="设计,缓存">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一种基于YYCache的缓存设计机制">
+<meta property="og:url" content="http://yoursite.com/2017/01/20/08、一种基于YYCache的缓存设计机制/index.html">
+<meta property="og:site_name" content="wanzhaoyang">
+<meta property="og:description" content="需求分析当前IM功能使用腾讯云IM SDK，从腾讯云IM获取的用户信息不全，非好友用户的用户名和头像信息必须通过网络请求异步获取，每次均网络请求获取消耗大量网络资源。因此，聊天用户信息有本地缓存的需求。后续还可能有其他本地缓存的需求。 设计目标 用户信息缓存独立于IM模块，IM模块只是用户信息的本地使用场景之一，还可用于其他业务场景； 具备通用可扩展性，不仅支持用户信息缓存，还应支持后续其他信息的">
+<meta property="og:updated_time" content="2017-09-01T10:04:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一种基于YYCache的缓存设计机制">
+<meta name="twitter:description" content="需求分析当前IM功能使用腾讯云IM SDK，从腾讯云IM获取的用户信息不全，非好友用户的用户名和头像信息必须通过网络请求异步获取，每次均网络请求获取消耗大量网络资源。因此，聊天用户信息有本地缓存的需求。后续还可能有其他本地缓存的需求。 设计目标 用户信息缓存独立于IM模块，IM模块只是用户信息的本地使用场景之一，还可用于其他业务场景； 具备通用可扩展性，不仅支持用户信息缓存，还应支持后续其他信息的">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/01/20/08、一种基于YYCache的缓存设计机制/"/>
+
+
+
+
+
+  <title>一种基于YYCache的缓存设计机制 | wanzhaoyang</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">wanzhaoyang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/20/08、一种基于YYCache的缓存设计机制/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wanzhaoyang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wanzhaoyang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">一种基于YYCache的缓存设计机制</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-20T23:21:20+08:00">
+                2017-01-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h3><p>当前IM功能使用腾讯云IM SDK，从腾讯云IM获取的用户信息不全，非好友用户的用户名和头像信息必须通过网络请求异步获取，每次均网络请求获取消耗大量网络资源。因此，聊天用户信息有本地缓存的需求。后续还可能有其他本地缓存的需求。</p>
+<h3 id="设计目标"><a href="#设计目标" class="headerlink" title="设计目标"></a>设计目标</h3><ul>
+<li>用户信息缓存独立于IM模块，IM模块只是用户信息的本地使用场景之一，还可用于其他业务场景；</li>
+<li>具备通用可扩展性，不仅支持用户信息缓存，还应支持后续其他信息的缓存；</li>
+<li>支持分账号缓存，实现不同账户缓存信息隔离；</li>
+<li>使用LruCache，在缓存值到达预设定值时将最近最少使用的对象移除；</li>
+<li>支持内存缓存和磁盘缓存。</li>
+</ul>
+<h3 id="方案设计"><a href="#方案设计" class="headerlink" title="方案设计"></a>方案设计</h3><p>经调研，目前iOS与android目前都有较好支持上述本地缓存的方案实现，只需要针对第三方方案做进一步的封装。以iOS端为例，YYCache能够较好的满足当前需求，具体特性如下（<a href="https://github.com/ibireme/YYCache）：" target="_blank" rel="external">https://github.com/ibireme/YYCache）：</a></p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LRU</td>
+<td>缓存支持 LRU (least-recently-used) 淘汰算法</td>
+</tr>
+<tr>
+<td>缓存控制</td>
+<td>支持多种缓存控制方法：总数量、总大小、存活时间、空闲空间</td>
+</tr>
+<tr>
+<td>兼容性</td>
+<td>API 基本和 NSCache 保持一致, 所有方法都是线程安全的</td>
+</tr>
+<tr>
+<td>内存缓存</td>
+<td>对象释放控制: 对象的释放(release) 可以配置为同步或异步进行，可以配置在主线程或后台线程进行;自动清空: 当收到内存警告或 App 进入后台时，缓存可以配置为自动清空。</td>
+</tr>
+<tr>
+<td>磁盘缓存</td>
+<td>可定制性: 磁盘缓存支持自定义的归档解档方法，以支持那些没有实现 NSCoding 协议的对象</td>
+</tr>
+</tbody>
+</table>
+<h3 id="iOS端方案实现"><a href="#iOS端方案实现" class="headerlink" title="iOS端方案实现"></a>iOS端方案实现</h3><p>首先是对YYCache的封装，提供SSCacheManager封装类，提供方法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">- (void)configCacheStrategyWithName:(NSString *)name maxCount:(NSUInteger)count maxSize:(NSUInteger)size;</div><div class="line"></div><div class="line">- (void)objectForKey:(NSString *)key withCacheName:(NSString *)name resultBlock:(void (^)(id object))block;</div><div class="line"></div><div class="line">- (void)setObject:(id)object forKey:(NSString *)key withCacheName:(NSString *)name;</div><div class="line"></div><div class="line">- (void)removeObjectForKey:(NSString *)key withCacheName:(NSString *)name;</div><div class="line"></div><div class="line">- (void)removeAllObjectsWithCacheName:(NSString *)name;</div></pre></td></tr></table></figure>
+<p>SSCacheManager实现不同用户的不同缓存信息分区，即<code>CacheWithName：</code>方法中将用户的OpenId，App的唯一标识BusinessId添加到缓存唯一标识中，具体实现如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">- (YYCache *)cacheWithName:(NSString *)name</div><div class="line">&#123;</div><div class="line">    SInt64 selfOpenId = [SSLoginUserManager defaultManager].user.openId;</div><div class="line">    NSInteger businessId = SS_BusinessId;</div><div class="line">    NSString *cacheKey = [NSString stringWithFormat:@&quot;%@_%@_%@&quot;, @(businessId), @(selfOpenId), name];</div><div class="line">    </div><div class="line">    return [YYCache cacheWithName:cacheKey];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上述实现了对YYCache的封装，按照软件架构设计分层思想，应当在此基础上封装业务层，用于具体处理对应的业务逻辑。下面将以缓存用户数据为实例，说明基于此的业务层的封装。对于用户信息管理类SSUserInfoManager，该业务层目标是快速方便增、删、改、查用户信息，提供接口如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">// 获取用户信息，获取不到才走网络请求</div><div class="line">- (void)getUserInfoWithUserOpenId:(SInt64)openId resultBlock:(void(^)(SSUserInfoModel *userInfo))block;</div><div class="line"></div><div class="line">// 缓存用户信息</div><div class="line">- (void)cacheUserInfo:(SSUserInfoModel *)userProfile;</div><div class="line"></div><div class="line">// 直接根据openId去cache用户信息，更新本地信息，并通过block的方式回调，网络请求失败的时候，也会去本地查缓存信息</div><div class="line">- (void)cacheUserInfoWithOpenId:(SInt64)openId resultBlock:(void (^)(SSUserInfoModel *))block;</div><div class="line"></div><div class="line">// 删除用户信息</div><div class="line">- (void)removeUserWithOpenId:(SInt64)openId;</div></pre></td></tr></table></figure>
+<p><code>- getUserInfoWithUserOpenId: resultBlock:</code>方法和<code>- cacheUserInfoWithOpenId: resultBlock:</code>区别在于用户信息获取策略的优先级。第一个优先读取本地缓存，获取失败会走网络请求；第二个优先网络数据请求，请求失败走本地缓存。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/设计/" rel="tag"># 设计</a>
+          
+            <a href="/tags/缓存/" rel="tag"># 缓存</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/25/07、多线程编程_todo/" rel="next" title="多线程编程">
+                <i class="fa fa-chevron-left"></i> 多线程编程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/08/09、cocoapods使用相关技巧_todo/" rel="prev" title="cocoapods使用相关技巧">
+                cocoapods使用相关技巧 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/avatar.jpg"
+               alt="wanzhaoyang" />
+          <p class="site-author-name" itemprop="name">wanzhaoyang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#需求分析"><span class="nav-number">1.</span> <span class="nav-text">需求分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设计目标"><span class="nav-number">2.</span> <span class="nav-text">设计目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方案设计"><span class="nav-number">3.</span> <span class="nav-text">方案设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iOS端方案实现"><span class="nav-number">4.</span> <span class="nav-text">iOS端方案实现</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wanzhaoyang</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

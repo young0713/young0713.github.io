@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-31T13:43:20.000Z</updated>
+  <updated>2017-09-27T13:10:35.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,51 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>背景高斯模糊弹窗效果实现</title>
+    <link href="http://yoursite.com/2017/07/22/18%E3%80%81%E8%83%8C%E6%99%AF%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A%E5%BC%B9%E7%AA%97%E6%95%88%E6%9E%9C%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://yoursite.com/2017/07/22/18、背景高斯模糊弹窗效果实现/</id>
+    <published>2017-07-22T12:10:43.000Z</published>
+    <updated>2017-09-27T13:10:35.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h3><p>最近设计同学对产品UI提升了要求，对所有的弹窗实现要求实现背景毛玻璃效果，举个例子，具体的效果图如下图所示。</p>
+<p><img src="http://owu6yhfdg.bkt.clouddn.com/pic_01.png" alt="image"></p>
+<p>根据设计的需求，系统的调研了当前主流的高斯模糊实现方案（参考），大致如下所示</p>
+<ol>
+<li>使用CoreImage</li>
+<li>基于vImage </li>
+<li>基于GPUImage</li>
+<li>使用UIVisualEffectView（iOS 8.0 +）</li>
+<li>使用UIToolbar的barStyle实现（iOS 7.0+）</li>
+</ol>
+<p>根据调研的结果，主流的高斯模糊使用CoreImage和vImage的居多。CoreImage高斯模糊的结果会有白边，白边的大小与模糊半径有关，而vImage不存在这种问题。UIVisualEffectView实现很简单，但是模糊程度特别高，不适用于类似弹窗的场景，且仅支持iOS8以上的设备。UIToolbar实现起来有些非主流，不采用。因此最终考虑从CoreImage和vImage两种方案中找一种实现。</p>
+<h3 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h3><p>由于CoreImage和vImage均是基于图片的高斯模糊。即要想获得模糊的，先获取当前屏幕展示画面的截图，然后通过算法对截图模糊，获取到所需要的图片，再将需要展示的弹窗显示出来。总体的流程如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">graph TD</div><div class="line">A(屏幕截图) --&gt; B(生成模糊图片)</div><div class="line">B --&gt; C(弹窗展示在模糊图片上)</div></pre></td></tr></table></figure>
+<h3 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h3><p>根据上述流程，该方案的实现共由两个关键步骤组成：</p>
+<ol>
+<li>屏幕截图</li>
+<li>模糊图片生成</li>
+</ol>
+<p>屏幕截图的实现参考GitHub上面的一个开源方案，GitHub地址是<a href="https://github.com/shinydevelopment/SDScreenshotCapture" target="_blank" rel="external">https://github.com/shinydevelopment/SDScreenshotCapture</a>；模糊图片生成基于CoreImage和vImage分别有各自的实现，具体相关demo可以参考我在GitHub上面写的一个<a href="https://github.com/young0713/GaussianBlurBgProject" target="_blank" rel="external">demo:https://github.com/young0713/GaussianBlurBgProject</a>。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>根据上述设计提出的需求，最终做出来的效果如下图所示：</p>
+<p><strong>模糊之前的UI</strong>：<br><img src="http://owu6yhfdg.bkt.clouddn.com/pic_02.PNG" alt="image"></p>
+<p><strong>模糊之后的UI：</strong><br><img src="http://owu6yhfdg.bkt.clouddn.com/pic_03.PNG" alt="image"></p>
+<p>实际效果和设计提出的需求一致。</p>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p><a href="http://www.jianshu.com/p/6dd0eab888a6" target="_blank" rel="external">1. iOS开发探索-高斯模糊&amp;毛玻璃效果</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;需求分析&quot;&gt;&lt;a href=&quot;#需求分析&quot; class=&quot;headerlink&quot; title=&quot;需求分析&quot;&gt;&lt;/a&gt;需求分析&lt;/h3&gt;&lt;p&gt;最近设计同学对产品UI提升了要求，对所有的弹窗实现要求实现背景毛玻璃效果，举个例子，具体的效果图如下图所示。&lt;/p&gt;
+&lt;p&gt;
+    
+    </summary>
+    
+    
+      <category term="UI" scheme="http://yoursite.com/tags/UI/"/>
+    
+  </entry>
   
   <entry>
     <title>IM保持多活方案</title>

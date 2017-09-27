@@ -344,7 +344,7 @@
 </ol>
 <p>根据调研的结果，主流的高斯模糊使用CoreImage和vImage的居多。CoreImage高斯模糊的结果会有白边，白边的大小与模糊半径有关，而vImage不存在这种问题。UIVisualEffectView实现很简单，但是模糊程度特别高，不适用于类似弹窗的场景，且仅支持iOS8以上的设备。UIToolbar实现起来有些非主流，不采用。因此最终考虑从CoreImage和vImage两种方案中找一种实现。</p>
 <h3 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h3><p>由于CoreImage和vImage均是基于图片的高斯模糊。即要想获得模糊的，先获取当前屏幕展示画面的截图，然后通过算法对截图模糊，获取到所需要的图片，再将需要展示的弹窗显示出来。总体的流程如下所示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">graph TD</div><div class="line">A(屏幕截图) --&gt; B(生成模糊图片)</div><div class="line">B --&gt; C(弹窗展示在模糊图片上)</div></pre></td></tr></table></figure>
+<p><img src="http://owu6yhfdg.bkt.clouddn.com/pic_04.png" alt="image"></p>
 <h3 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h3><p>根据上述流程，该方案的实现共由两个关键步骤组成：</p>
 <ol>
 <li>屏幕截图</li>

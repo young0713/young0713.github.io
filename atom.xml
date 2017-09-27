@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-27T13:10:35.000Z</updated>
+  <updated>2017-09-27T13:17:09.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/07/22/18%E3%80%81%E8%83%8C%E6%99%AF%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A%E5%BC%B9%E7%AA%97%E6%95%88%E6%9E%9C%E5%AE%9E%E7%8E%B0/"/>
     <id>http://yoursite.com/2017/07/22/18、背景高斯模糊弹窗效果实现/</id>
     <published>2017-07-22T12:10:43.000Z</published>
-    <updated>2017-09-27T13:10:35.000Z</updated>
+    <updated>2017-09-27T13:17:09.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h3><p>最近设计同学对产品UI提升了要求，对所有的弹窗实现要求实现背景毛玻璃效果，举个例子，具体的效果图如下图所示。</p>
 <p><img src="http://owu6yhfdg.bkt.clouddn.com/pic_01.png" alt="image"></p>
@@ -34,7 +34,7 @@
 </ol>
 <p>根据调研的结果，主流的高斯模糊使用CoreImage和vImage的居多。CoreImage高斯模糊的结果会有白边，白边的大小与模糊半径有关，而vImage不存在这种问题。UIVisualEffectView实现很简单，但是模糊程度特别高，不适用于类似弹窗的场景，且仅支持iOS8以上的设备。UIToolbar实现起来有些非主流，不采用。因此最终考虑从CoreImage和vImage两种方案中找一种实现。</p>
 <h3 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h3><p>由于CoreImage和vImage均是基于图片的高斯模糊。即要想获得模糊的，先获取当前屏幕展示画面的截图，然后通过算法对截图模糊，获取到所需要的图片，再将需要展示的弹窗显示出来。总体的流程如下所示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">graph TD</div><div class="line">A(屏幕截图) --&gt; B(生成模糊图片)</div><div class="line">B --&gt; C(弹窗展示在模糊图片上)</div></pre></td></tr></table></figure>
+<p><img src="http://owu6yhfdg.bkt.clouddn.com/pic_04.png" alt="image"></p>
 <h3 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h3><p>根据上述流程，该方案的实现共由两个关键步骤组成：</p>
 <ol>
 <li>屏幕截图</li>

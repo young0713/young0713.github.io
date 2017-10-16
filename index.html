@@ -261,6 +261,146 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/11/19、客户端接入PushKit相关逻辑/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wanzhaoyang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wanzhaoyang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/11/19、客户端接入PushKit相关逻辑/" itemprop="url">客户端接入PushKit相关逻辑</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-11T16:24:11+08:00">
+                2017-08-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h3><p>最近项目中集成了音视频聊天，但是运营一段时间发现实际数据不是很理想，集中反应在音视频聊天的接通率特别低。通过研究微信等主流的音视频聊天的实现方式，发现在app进入后台以及app杀死的情况下，可以响铃及振动，而我们的app在后台或者app杀死的情况下只有push通知。通过调研，发现主流的音视频聊天都集成了VoIP push功能，可以实现在app杀死的情况下唤醒app，播放来电铃声。</p>
+<h3 id="VoIP-push简介"><a href="#VoIP-push简介" class="headerlink" title="VoIP push简介"></a>VoIP push简介</h3><p>VoIP push是iOS 8.0引入的PushKit中的核心功能。能够在app未启动的状态下自动启动、app在后台启动app。与推送不同，VoIP并不会展示给用户，而是通过启动app，然后开发者在相关代理方法中发送本地推送的方式实现的。</p>
+<h3 id="VoIP接入"><a href="#VoIP接入" class="headerlink" title="VoIP接入"></a>VoIP接入</h3><h4 id="1-配置证书"><a href="#1-配置证书" class="headerlink" title="1. 配置证书"></a>1. 配置证书</h4><p>这一部分网上可找到的资源有很多，在此只提供下面两张图片示意。注意，如果是项目相关证书已经生成了，不需要重新生成，VoIP push证书和APNS push证书类似功能类似。</p>
+<p>步骤1:<br><img src="http://owu6yhfdg.bkt.clouddn.com/VoIP_step_01.png" alt="image"></p>
+<p>步骤2:<br><img src="http://owu6yhfdg.bkt.clouddn.com/VoIP_step_02.png" alt="image"></p>
+<p>剩下的步骤一步步操作即可完成。</p>
+<h4 id="2-Xcode相关设置"><a href="#2-Xcode相关设置" class="headerlink" title="2. Xcode相关设置"></a>2. Xcode相关设置</h4><p>Xcode配置主要需要更新info.plist文件。具体包涵配置项如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;key&gt;UIBackgroundModes&lt;/key&gt;</div><div class="line">&lt;array&gt;</div><div class="line">	&lt;string&gt;fetch&lt;/string&gt;</div><div class="line">	&lt;string&gt;remote-notification&lt;/string&gt;</div><div class="line">	&lt;string&gt;voip&lt;/string&gt;</div><div class="line">&lt;/array&gt;</div></pre></td></tr></table></figure>
+<p>除此以外，还需要引入PushKit.framework。</p>
+<h4 id="3-具体代码实现"><a href="#3-具体代码实现" class="headerlink" title="3. 具体代码实现"></a>3. 具体代码实现</h4><ul>
+<li>在AppDelegate中导入头文件<figure class="highlight plain"><figcaption><span><pushkit pushkit.h="">```、遵循PKPushRegistryDelegate协议</pushkit></span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- 在- (BOOL)application:application didFinishLaunchingWithOptions:launchOptions中添加设置通知类型相关代码。这个并不是VoIP相关的，但前面我们说过，VoIP需要使用本地推送，这个是本地推送相关设置。</div></pre></td></tr></table></figure></li>
+</ul>
+<p>UIUserNotificationType types = (UIUserNotificationTypeBadge<br>                                    | UIUserNotificationTypeSound<br>                                    | UIUserNotificationTypeAlert);<br>UIUserNotificationSettings *notificationSettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];<br>[[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- 在- (void)application:application didRegisterUserNotificationSettings:notificationSettings方法中注册PushKit实例并设置代理。</div></pre></td></tr></table></figure></p>
+<p>PKPushRegistry *voipRegistry = [[PKPushRegistry alloc] initWithQueue:dispatch_get_main_queue()];<br>voipRegistry.delegate = self;<br>voipRegistry.desiredPushTypes = [NSSet setWithObject:PKPushTypeVoIP];<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- 最后，实现PKPushRegistryDelegate方法，包涵如下方法：</div></pre></td></tr></table></figure></p>
+<ul>
+<li>(void)pushRegistry:(PKPushRegistry <em>)registry didUpdatePushCredentials:(PKPushCredentials </em>)pushCredentials forType:(PKPushType)type;</li>
+<li>(void)pushRegistry:(PKPushRegistry <em>)registry didReceiveIncomingPushWithPayload:(PKPushPayload </em>)payload forType:(PKPushType)type;</li>
+<li>(void)pushRegistry:(PKPushRegistry *)registry didInvalidatePushTokenForType:(PKPushType)type;<br>```<br>在didUpdatePushCredentials方法中，获取到pushCredentials.token并将token传递给server端，这里需要注意，传递给server端的token需要去处’&lt;’、’&gt;’、’ ‘;<br>didReceiveIncomingPushWithPayload方法是接收到VoIP push时执行的方法，主要包括展示本地通知，调起对应业务逻辑。</li>
+</ul>
+<h4 id="4-push绑定与解绑"><a href="#4-push绑定与解绑" class="headerlink" title="4. push绑定与解绑"></a>4. push绑定与解绑</h4><p>在didUpdatePushCredentials方法中获取pushCredentials.token并将token传递给server端的操作实际上是一个绑定操作，通过该token可以唯一确定一个手机端。<br>解绑是告诉server该token不需要接收VoIP push。解绑操作视情况而定，通常VoIP使用强依赖于登录，这种场景下就需要进行解绑操作。</p>
+<h3 id="CallKit相关技术"><a href="#CallKit相关技术" class="headerlink" title="CallKit相关技术"></a>CallKit相关技术</h3><p>PushKit主要在iOS8引入了VoIP功能，给唤醒app带来了极大的方便，尤其对于带有音视频通话功能的app提供了优秀的支持。而到了iOS系统，苹果提供了体验更棒的CallKit，相较PushKit而言，CallKit支持系统级别的童话界面、VoIP通话权限提升到了系统级别，当来电话时，VoIP通话不会被打断，除此之外，支持VoIP支持通话记录，可以通过通话记录唤醒app并进行音视频聊天。CallKit比PushKit对VoIP支持力度更大，功能更加完善，API调用也相对来说复杂一些。后续可以考虑结合PushKit和CallKit，系统在iOS 10+的机器支持CallKit，系统在iOS 8+的机器支持PushKit，完善app功能。不过引入CallKit也需要很慎重，毕竟CallKit支持到了系统级别，如果盲目引入影响到用户其他的核心体验，同样对用户的操作体验造成不好的影响。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/22/18、背景高斯模糊弹窗效果实现/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1376,128 +1516,6 @@ react-native run-ios
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/08/09、cocoapods使用相关技巧_todo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="wanzhaoyang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="wanzhaoyang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/02/08/09、cocoapods使用相关技巧_todo/" itemprop="url">cocoapods使用相关技巧</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-08T23:10:00+08:00">
-                2017-02-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="what-is-this-article-for"><a href="#what-is-this-article-for" class="headerlink" title="what is this article for"></a>what is this article for</h3><p>工</p>
-<h3 id="part-1"><a href="#part-1" class="headerlink" title="part 1"></a>part 1</h3><p>我</p>
-<h3 id="part-2"><a href="#part-2" class="headerlink" title="part 2"></a>part 2</h3><p>总</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1548,7 +1566,7 @@ react-native run-ios
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

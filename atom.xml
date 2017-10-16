@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-10-16T12:27:21.000Z</updated>
+  <updated>2017-10-16T12:31:12.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2017/08/11/19%E3%80%81%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%8E%A5%E5%85%A5PushKit%E7%9B%B8%E5%85%B3%E9%80%BB%E8%BE%91/"/>
     <id>http://yoursite.com/2017/08/11/19、客户端接入PushKit相关逻辑/</id>
     <published>2017-08-11T08:24:11.000Z</published>
-    <updated>2017-10-16T12:27:21.000Z</updated>
+    <updated>2017-10-16T12:31:12.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h3><p>最近项目中集成了音视频聊天，但是运营一段时间发现实际数据不是很理想，集中反应在音视频聊天的接通率特别低。通过研究微信等主流的音视频聊天的实现方式，发现在app进入后台以及app杀死的情况下，可以响铃及振动，而我们的app在后台或者app杀死的情况下只有push通知。通过调研，发现主流的音视频聊天都集成了VoIP push功能，可以实现在app杀死的情况下唤醒app，播放来电铃声。</p>
 <h3 id="VoIP-push简介"><a href="#VoIP-push简介" class="headerlink" title="VoIP push简介"></a>VoIP push简介</h3><p>VoIP push是iOS 8.0引入的PushKit中的核心功能。能够在app未启动的状态下自动启动、app在后台启动app。与推送不同，VoIP并不会展示给用户，而是通过启动app，然后开发者在相关代理方法中发送本地推送的方式实现的。</p>
